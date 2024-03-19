@@ -9,22 +9,22 @@ function getComputerChoice(){
 
 }
 
-const computer_choice = strings[getComputerChoice()];
+let computer_choice = " ";
 
-const user_choice = prompt("Please enter  rock, paper or  scissor");
+let user_choice = " ";
 
-user_choice.toLowerCase;
+
 
 function playRound(playerSelection, computerSelection){
 
     if(playerSelection === computerSelection){
         console.log("Its a tie");
     }
-    else if (playerSelection === strings[0] && computerSelection=== strings[1]) {
+    else if (playerSelection === "rock" && computerSelection=== "paper") {
         console.log("you lose");
     } 
     
-    else if(playerSelection === strings[1] && computerSelection === strings[2]){
+    else if(playerSelection === "paper" && computerSelection === "scissor"){
         console.log("you lose");
     }
     else {
@@ -38,11 +38,16 @@ function playRound(playerSelection, computerSelection){
 function playGame(){
     let count = 0;
     while(count < 5){
+        user_choice = prompt("Please enter  rock, paper or  scissor");
+        user_choice.toLowerCase;
+        computer_choice = strings[getComputerChoice()];
         playRound(user_choice, computer_choice);
         count++;
     }
 
 }
+
+playGame();
 
 
 
