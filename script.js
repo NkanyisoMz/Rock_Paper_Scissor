@@ -18,17 +18,20 @@ let user_choice = " ";
 function playRound(playerSelection, computerSelection){
 
     if(playerSelection === computerSelection){
-        console.log("Its a tie");
+        return "Its a tie";
     }
     else if (playerSelection === "rock" && computerSelection=== "paper") {
-        console.log("you lose");
+        return "you lose! paper beats rock";
     } 
     
     else if(playerSelection === "paper" && computerSelection === "scissor"){
-        console.log("you lose");
+        return "you lose! scissor beats paper";
+    }
+    else if(playerSelection === "scissor" && computerSelection === "rock"){
+        return "you lose! rock beats scissor";
     }
     else {
-        console.log("You win");
+        return "You win!";
         
     }
     
@@ -37,12 +40,30 @@ function playRound(playerSelection, computerSelection){
 
 function playGame(){
     let count = 0;
+    let userCount = 0;
+    let computerCount = 0;
     while(count < 5){
-        user_choice = prompt("Please enter  rock, paper or  scissor");
-        user_choice.toLowerCase;
+        user_choice = prompt("Please enter  rock, paper or  scissor").toLowerCase();
         computer_choice = strings[getComputerChoice()];
-        playRound(user_choice, computer_choice);
+        console.log(playRound(user_choice, computer_choice));
+        let result = playRound(user_choice, computer_choice);
+        if(result=== "You win!"){
+            userCount++;
+        }else if(result.startsWith("you lose")){
+            computerCount++;
+        }
+
+
         count++;
+    }
+
+    if(userCount> computerCount){
+        console.log("You won the game");
+    }
+    else if(computerCount > userCount){
+        console.log("The computer won the game");
+    }else{
+        console.log("its a tie");
     }
 
 }
