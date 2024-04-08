@@ -1,6 +1,7 @@
 let strings = ["rock", "paper", "scissor"];
 let userCount = 0;
 let computerCount = 0;
+let draw = 0;
 
 function getComputerChoice() {
     let computer_choice_index = Math.floor(Math.random() * strings.length);
@@ -9,20 +10,27 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     let outputDiv = document.getElementById("output");
-    
+
     if (playerSelection === computerSelection) {
         console.log("It's a tie");
-        outputDiv.innerHTML = "It's a tie";
+        draw++;
+        outputDiv.innerHTML = "It's a tie <br>" + "yourcount: " + userCount +
+        "draw: " + draw + "computerCount: "+computerCount;
+       
     } else if ((playerSelection === "rock" && computerSelection === "paper") ||
                (playerSelection === "paper" && computerSelection === "scissor") ||
                (playerSelection === "scissor" && computerSelection === "rock")) {
         console.log("You lose! " + computerSelection + " beats " + playerSelection);
-        outputDiv.innerHTML = "You lose! " + computerSelection + " beats " + playerSelection;
         computerCount++;
+        outputDiv.innerHTML = "You lose! <br> " + computerSelection + " beats " + playerSelection +"<br>"+ "yourcount: " + userCount +
+        "draw: " + draw + "computerCount: "+computerCount;
+        
     } else {
         console.log("You win!");
-        outputDiv.innerHTML = "You win!";
         userCount++;
+        outputDiv.innerHTML = "You win!<br>" + "yourcount: " + userCount +
+        "draw: " + draw + "computerCount: "+computerCount;
+        
     }
 
     // Check win condition after each round
