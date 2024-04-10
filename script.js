@@ -17,8 +17,8 @@ function playRound(playerSelection, computerSelection) {
         console.log("It's a tie");
         draw++;
         outputDiv.innerHTML = "It's a tie <br>" + computerSelection + " equals out with " + playerSelection +"<br>";
-        scoresDiv.innerHTML =  "yourcount: " + userCount +
-        "draw: " + draw + "computerCount: "+computerCount;
+        scoresDiv.innerHTML =  "yourcount:  " + userCount +
+        "   draw:  " + draw + " computerCount:   "+computerCount;
        
     } else if ((playerSelection === "rock" && computerSelection === "paper") ||
                (playerSelection === "paper" && computerSelection === "scissor") ||
@@ -26,15 +26,15 @@ function playRound(playerSelection, computerSelection) {
         console.log("You lose! " + computerSelection + " beats " + playerSelection);
         computerCount++;
         outputDiv.innerHTML = "You lose! <br> "+ computerSelection + " beats " + playerSelection +"<br>";
-        scoresDiv.innerHTML =  "yourcount: " + userCount +
-        "draw: " + draw + "computerCount: "+computerCount;
+        scoresDiv.innerHTML =  "yourcount:  " + userCount +
+        "   draw:  " + draw + " computerCount:  "+computerCount;
         
     } else {
         console.log("You win!");
         userCount++;
         outputDiv.innerHTML = "You win!<br>" + computerSelection + " beats " + playerSelection +"<br>"; 
-        scoresDiv.innerHTML = "yourcount: " + userCount +
-        "draw: " + draw + "computerCount: "+computerCount;
+        scoresDiv.innerHTML = "yourcount:   " + userCount +
+        "   draw:  " + draw + " computerCount:   "+computerCount;
         
     }
 
@@ -67,8 +67,8 @@ function resetGame() {
 
     // Reset the scores display
     let scoresDiv = document.getElementById("scores");
-    scoresDiv.innerHTML = "yourcount: " + userCount +
-        "draw: " + draw + "computerCount: "+computerCount;
+    scoresDiv.innerHTML = "yourcount:   " + userCount +
+        "draw:  " + draw + "computerCount:  "+computerCount;
 
 
     // Optionally, add any other UI resets here

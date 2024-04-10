@@ -2,12 +2,13 @@ body{
     padding: 0%;
     margin: 0%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: antiquewhite;
 }
 
 #container{
-    padding: 20%;
+    padding: 150px;
     justify-content: center;
     border: 5px;
     border-color: aqua;
@@ -17,7 +18,20 @@ body{
 
 #output{
     justify-content: center;
+    padding: 10px;
+    height: 50px;
 
+}
+#scores{
+    justify-content: center;
+    padding: 10px;
+    height: 50px;
+}
+
+#outcome{
+    justify-content: center;
+    padding: 10px;
+    height: 50px;
 }
 
 #rock{
@@ -27,8 +41,14 @@ body{
 #paper{
     justify-content: center;
 
+
 }
 #scissor{
     justify-content: center;
 
+}
+
+#rock, #paper, #scissor, #restartGame {
+    padding: 15px;
+    margin: 10px;
 }
