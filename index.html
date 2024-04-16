@@ -8,11 +8,16 @@
     <title>RPS</title>
 </head>
 <body>
+
     <div id="container">
-        <div id="output"><p>You may start playing the Game</p></div>
-        <div id="scores"><p>yourcount:   0
-            draw:  0   computerCount:  0;</p></div>
-        <div id="outcome"></div>
+        <div id="title">Rock Paper Scissors</div>
+        <div id="output" class="result"><p class="win-message">You may start playing 
+            the Game</p></div>
+        <div id="scores" class="result"><p class="score-text">
+            <span class="you">You:</span>   <span class="user-count">0</span>
+            <span class="draw">Draw:</span>  <span class="draw-count">0</span>  
+            <span class="computer">Computer:</span>  <span class="computer-count">0</span></p></div>
+        <div id="outcome" class="result"><p class="outcome-text"></p></div>
         <button id="restartGame" style="display: none;">Restart Game</button>
         <button id="rock">Rock</button>
     

@@ -3,6 +3,11 @@ let userCount = 0;
 let computerCount = 0;
 let draw = 0;
 
+    // Update userCount, draw, and computerCount directly in the HTML
+    document.querySelector(".user-count").textContent = userCount;
+    document.querySelector(".draw-count").textContent = draw;
+    document.querySelector(".computer-count").textContent = computerCount;
+
 function getComputerChoice() {
     let computer_choice_index = Math.floor(Math.random() * strings.length);
     return strings[computer_choice_index];
@@ -14,27 +19,34 @@ function playRound(playerSelection, computerSelection) {
     let outcomeDiv = document.getElementById("outcome");
 
     if (playerSelection === computerSelection) {
-        console.log("It's a tie");
+        console.log("It's a tie!  ");
         draw++;
-        outputDiv.innerHTML = "It's a tie <br>" + computerSelection + " equals out with " + playerSelection +"<br>";
-        scoresDiv.innerHTML =  "yourcount:  " + userCount +
-        "   draw:  " + draw + " computerCount:   "+computerCount;
+        outputDiv.innerHTML = "<div class='win-message'><br>It's a tie!  " + computerSelection + " equals out with " + playerSelection +"</div>";
+        //scoresDiv.innerHTML = "<div class='scores'><p>You:   " + userCount +
+        //"  Draw:  " + draw + "  Computer:  "+computerCount + "</p></div>";
+        scoresDiv.innerHTML = "<div class='scores'><p><span class='you'>You: </span>" + "<span class='user-count'>"+userCount +"</span>"+
+        "<span class='draw'>Draw: </span>" + "<span class='draw-count'>" + draw +  "</span> "+ "<span class='computer'>Computer: </span>" + "<span class='computer-count'>" + computerCount + "</span></p></div>";
        
     } else if ((playerSelection === "rock" && computerSelection === "paper") ||
                (playerSelection === "paper" && computerSelection === "scissor") ||
                (playerSelection === "scissor" && computerSelection === "rock")) {
         console.log("You lose! " + computerSelection + " beats " + playerSelection);
         computerCount++;
-        outputDiv.innerHTML = "You lose! <br> "+ computerSelection + " beats " + playerSelection +"<br>";
-        scoresDiv.innerHTML =  "yourcount:  " + userCount +
-        "   draw:  " + draw + " computerCount:  "+computerCount;
+        outputDiv.innerHTML = "<div class='win-message'><br>You lose!  " + computerSelection + " beats " + playerSelection + "</div>";
+        //scoresDiv.innerHTML = "<div class='scores'><p>You:   " + userCount +
+        //"  Draw:  " + draw + "  Computer:  "+computerCount + "</p></div>";
+        scoresDiv.innerHTML = "<div class='scores'><p><span class='you'>You: </span>" + "<span class='user-count'>"+userCount +"</span>"+
+        "<span class='draw'>Draw: </span>" + "<span class='draw-count'>" + draw +  "</span> "+ "<span class='computer'>Computer: </span>" + "<span class='computer-count'>" + computerCount + "</span></p></div>";
         
     } else {
         console.log("You win!");
         userCount++;
-        outputDiv.innerHTML = "You win!<br>" + computerSelection + " beats " + playerSelection +"<br>"; 
-        scoresDiv.innerHTML = "yourcount:   " + userCount +
-        "   draw:  " + draw + " computerCount:   "+computerCount;
+        outputDiv.innerHTML = "<div class='win-message'><br>You win!  " + computerSelection + " beats " + playerSelection + "</div>"; 
+        //scoresDiv.innerHTML = "<div class='scores'><p>You:   " + userCount +
+        //"  Draw:  " + draw + "  Computer:  "+computerCount + "</p></div>";
+        scoresDiv.innerHTML = "<div class='scores'><p><span class='you'>You: </span>" + "<span class='user-count'>"+userCount +"</span>"+
+        "<span class='draw'>Draw: </span>" + "<span class='draw-count'>" + draw +  "</span> "+ "<span class='computer'>Computer: </span>" + "<span class='computer-count'>" + computerCount + "</span></p></div>";
+
         
     }
 
@@ -43,12 +55,12 @@ function playRound(playerSelection, computerSelection) {
     // Check win condition after each round
     if (userCount >= 5) {
         console.log("You won the game!");
-        outcomeDiv.innerHTML += "<br>You won the game!";
+        outcomeDiv.innerHTML += "<div class='outcome'>You won the game!</div>";
         disableGameButtons(true);
 
     } else if (computerCount >= 5) {
         console.log("Computer won the game!");
-        outcomeDiv.innerHTML += "<br>Computer won the game!";
+        outcomeDiv.innerHTML += "<div class='outcome'>Computer won the game!</div>";
         disableGameButtons(true);
     }
 }
@@ -60,15 +72,18 @@ function resetGame() {
 
     // Clear the outcome message
     let outcomeDiv = document.getElementById("outcome");
-    outcomeDiv.innerHTML = "";
+    outcomeDiv.innerHTML = "<div class='outcome'>    </div>";
 
     let outputDiv = document.getElementById("output");
-    outputDiv.innerHTML = "You may start playing!<br>"
+    outputDiv.innerHTML = "<div class='win-message'><br>You may start playing!</div>"
 
     // Reset the scores display
     let scoresDiv = document.getElementById("scores");
-    scoresDiv.innerHTML = "yourcount:   " + userCount +
-        "draw:  " + draw + "computerCount:  "+computerCount;
+    //scoresDiv.innerHTML = "<div class='scores'><p>You:   " + userCount +
+    //    "  Draw:  " + draw + "  Computer:  "+computerCount + "</p></div>";
+    scoresDiv.innerHTML = "<div class='scores'><p><span class='you'>You: </span>" + "<span class='user-count'>"+userCount +"</span>"+
+        "<span class='draw'>Draw: </span>" + "<span class='draw-count'>" + draw +  "</span> "+ "<span class='computer'>Computer: </span>" + "<span class='computer-count'>" + computerCount + "</span></p></div>";
+
 
 
     // Optionally, add any other UI resets here
@@ -105,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function() {
     button2.addEventListener("click", handleButtonClick);
     button3.addEventListener("click", handleButtonClick);
     restartButton.addEventListener("click", resetGame); // Add event listener for restarting the game
+
+
+
 });
 
 

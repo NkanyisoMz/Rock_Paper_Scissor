@@ -6,12 +6,25 @@ body{
     align-items: center;
     background-color: antiquewhite;
 }
+#title{
+    font-size: x-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    align-self: center;
+    padding: 30px;
+    font-weight: 700;
+    color: #0838d6;
+    justify-content: center;
+    text-align: center;
+
+
+}
 
 #container{
-    padding: 150px;
+    padding: 90px;
     justify-content: center;
-    border: 5px;
+    border: 5px solid;
     border-color: aqua;
+    text-align: center;
 
     
 }
@@ -20,18 +33,24 @@ body{
     justify-content: center;
     padding: 10px;
     height: 50px;
+    border: 2px;
+    /*border-color: aqua;*/
 
 }
-#scores{
+ #scores{
     justify-content: center;
     padding: 10px;
     height: 50px;
+    border: 2px;
+    /*border-color: aqua;*/
 }
 
 #outcome{
     justify-content: center;
     padding: 10px;
     height: 50px;
+    border: 2px;
+    /*border-color: aqua;*/
 }
 
 #rock{
@@ -51,4 +70,94 @@ body{
 #rock, #paper, #scissor, #restartGame {
     padding: 15px;
     margin: 10px;
+    border: 2px solid;
+    border-color: black;
+    border-radius: 5px;
+    background-color: cadetblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#rock:hover,#paper:hover,#scissor:hover{
+    box-shadow: inset;
+    background-color: blue;
+}
+
+#output p{
+    font-size: large;
+}
+
+#scores p{
+    font-size: larger;
+}
+
+#outcome{
+    font-size: large;
+}
+
+/* Add these styles to ensure consistent alignment and font size */
+.result {
+    justify-content: center;
+    padding: 10px;
+    height: 50px;
+    border: 2px;
+    /*border-color: aqua;*/
+    text-align: center; /* Center the text */
+    /*color: blueviolet;*/
+}
+
+.win-message, .score-text, .outcome-text {
+    font-size: large; /* Set consistent font size */
+}
+
+/* Optionally, you can define specific styles for each element */
+.win-message {
+    font-size: large;
+
+    /* Add specific styles for the win message if needed */
+}
+
+.score-text {
+    font-size: large;
+    /* Add specific styles for the scores if needed */
+}
+
+.outcome-text {
+    font-size: large;
+    /* Add specific styles for the outcome message if needed */
+}
+
+.user-count {
+    background-color: lightblue;
+    padding: 5px;
+}
+
+.draw-count {
+    background-color: lightgreen;
+    padding: 5px;
+}
+
+.computer-count {
+    background-color: lightcoral;
+    padding: 5px;
+}
+
+.user-count, .draw-count, .computer-count {
+    font-size: large; /* Set consistent font size */
+    background-color: lightgrey; /* Optional: Background color */
+    padding: 10px; /* Optional: Padding */
+    margin: 0 5px; /* Optional: Margin for spacing */
+    border: 2px solid;
+    border-color: blue;
+}
+
+.you, .draw, .computer {
+    font-size: large;
+    background-color: blueviolet;
+    border: 2px solid;
+    border-color: blue;
+    padding: 10px; /* Optional: Padding */
+    margin: 0 10px; /* Optional: Margin for spacing */
 }
