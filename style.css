@@ -4,17 +4,18 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: rgb(247, 239, 229);
 }
 #title{
-    font-size: x-large;
+    font-size: large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     align-self: center;
-    padding: 30px;
+    padding: 15px;
     font-weight: 700;
-    color: #0838d6;
+    color: #052de2;
     justify-content: center;
     text-align: center;
+    text-shadow: 2px 2px 6px rgba(0,0.0,0.2);
 
 
 }
@@ -22,8 +23,8 @@ body{
 #container{
     padding: 90px;
     justify-content: center;
-    border: 5px solid;
-    border-color: aqua;
+    /*border: 5px solid;
+    border-color: aqua;*/
     text-align: center;
 
     
@@ -75,14 +76,22 @@ body{
     border-radius: 5px;
     background-color: cadetblue;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: 400;
+    font-weight: 700;
     text-align: center;
     vertical-align: middle;
 }
 
-#rock:hover,#paper:hover,#scissor:hover{
-    box-shadow: inset;
-    background-color: blue;
+#rock[disabled],
+#paper[disabled],#scissor[disabled]{
+    box-shadow: none;
+    background-color: cadetblue;
+    opacity: 0.5;
+}
+
+#restartGame:hover:not([disabled]),#rock:hover:not([disabled]),
+#paper:hover:not([disabled]),#scissor:hover:not([disabled]){
+    box-shadow: 2px 2px 6px rgba(0,0.0,0.2);
+    background-color: rgb(0, 225, 255);
 }
 
 #output p{
@@ -115,6 +124,8 @@ body{
 /* Optionally, you can define specific styles for each element */
 .win-message {
     font-size: large;
+    font-weight: 600;
+    color: #1f1e1eee;
 
     /* Add specific styles for the win message if needed */
 }
@@ -146,18 +157,44 @@ body{
 
 .user-count, .draw-count, .computer-count {
     font-size: large; /* Set consistent font size */
+    font-weight: 700;
     background-color: lightgrey; /* Optional: Background color */
     padding: 10px; /* Optional: Padding */
     margin: 0 5px; /* Optional: Margin for spacing */
     border: 2px solid;
     border-color: blue;
+    border-radius: 4px;
 }
 
 .you, .draw, .computer {
     font-size: large;
+    font-weight: 600;
     background-color: blueviolet;
     border: 2px solid;
     border-color: blue;
     padding: 10px; /* Optional: Padding */
     margin: 0 10px; /* Optional: Margin for spacing */
+    border-radius: 4px;
 }
+
+#restartGame {
+    display: none; /* initially hidden */
+    margin: auto; /* centers the button within its container */
+}
+
+.outcome2, .outcome{
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 800;
+    color: rgb(13, 238, 13);
+
+}
+
+.outcome2{
+
+    color: rgb(243, 10, 10);
+
+}
+
+
+

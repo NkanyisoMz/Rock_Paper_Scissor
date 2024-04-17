@@ -21,7 +21,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("It's a tie!  ");
         draw++;
-        outputDiv.innerHTML = "<div class='win-message'><br>It's a tie!  " + computerSelection + " equals out with " + playerSelection +"</div>";
+        outputDiv.innerHTML = "<div class='win-message'><br>It's a tie!  " + computerSelection + " cancel's out with " + playerSelection +"</div>";
         //scoresDiv.innerHTML = "<div class='scores'><p>You:   " + userCount +
         //"  Draw:  " + draw + "  Computer:  "+computerCount + "</p></div>";
         scoresDiv.innerHTML = "<div class='scores'><p><span class='you'>You: </span>" + "<span class='user-count'>"+userCount +"</span>"+
@@ -60,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
 
     } else if (computerCount >= 5) {
         console.log("Computer won the game!");
-        outcomeDiv.innerHTML += "<div class='outcome'>Computer won the game!</div>";
+        outcomeDiv.innerHTML += "<div class='outcome2'>Computer won the game!</div>";
         disableGameButtons(true);
     }
 }
